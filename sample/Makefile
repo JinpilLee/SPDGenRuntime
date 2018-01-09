@@ -1,14 +1,10 @@
 all:
 	clang -O3 -fno-inline -c main.c
 	clang -O3 -fno-inline -c -mllvm -polly -mllvm -polly-enable-spdgen test.c
-	clang -O3 test.o main.o ../libSPDGen.a -o exe
+	clang -O3 test.o main.o ../libSPDGen.a -o exec
 
-test:
-	clang -O1 -S -emit-llvm test.c -o opt.ll
-	opt -S -polly-canonicalize opt.ll -o can.ll
-	opt -S -loop-extract can.ll -o test.ll
-#	opt -polly-ast -analyze -q test.ll -polly-process-unprofitable
-	opt -polly-scops -analyze -q test.ll -polly-process-unprofitable
+emit:
+	clang -O3 -fno-inline -S -emit-llvm -mllvm -polly -mllvm -polly-enable-spdgen test.c
 
 clean:
-	rm -f *.ll *.o *.spd exe
+	rm -f *.ll *.o *.spd *.s exec
