@@ -1,9 +1,8 @@
 #include "internal.h"
 
-// FIXME for test
-#include <stdio.h>
-
 // FIXME temporary
-void __spd_run_kernel(int kernel_num) {
-  printf("KERNEL %d EXECUTED HERE\n", kernel_num);
+// requires kernel identifier
+void __spd_run_kernel(float *to_fpga_addr, ull_t to_size,
+                      float *from_fpga_addr, ull_t from_size) {
+  return;
 }
