@@ -1,0 +1,12 @@
+Name      kernel0;
+Main_In   {Mi::a, b, sop, eop};
+Main_Out  {Mo::c, d, sop, eop};
+EQU       equ0, sub11 = a - b;
+EQU       equ1, sub12 = a - sub11;
+EQU       equ2, sub13 = b - sub11;
+EQU       equ3, c = sub11;
+EQU       equ4, mul = sub12 * sub12;
+EQU       equ5, mul18 = sub13 * sub13;
+EQU       equ6, add = mul + mul18;
+EQU       equ7, d = add;
+DRCT (Mo::sop, Mo::eop) = (Mi::sop, Mi::eop);

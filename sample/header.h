@@ -1,5 +1,5 @@
-#define M 8
-#define N 10
+#define M 1024
+#define N 1024
 
 extern float a[M][N];
 extern float b[M][N];

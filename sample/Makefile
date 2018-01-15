@@ -4,7 +4,7 @@ CXX_CMD=clang++ -O3
 all: main.c kernel.cpp
 	$(CC_CMD) -fno-inline -c main.c
 	$(CXX_CMD) -c kernel.cpp
-	$(CC_CMD) test.o main.o ../libSPDGen.a -o exec
+	$(CC_CMD) main.o kernel.o test.o -lstdc++ ../libSPDGen.a -o exec
 
 cpu_only: test.c main.c
 	$(CC_CMD) test.c main.c -o exec
