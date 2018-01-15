@@ -3,18 +3,13 @@
 void calc(void) {
   for (int i = 0; i < M; i++) {
     for (int j = 0; j < N; j++) {
-      float ta = a[i][j];
-      float tb = b[i][j];
-      c[i][j] = ta + tb;
-      d[i][j] = c[i][j] * c[i][j];
-    }
-  }
-
-  for (int i = 0; i < M; i++) {
-    for (int j = 0; j < N; j++) {
-      float tc = c[i][j];
-      float td = d[i][j];
-      a[i][j] = tc;
+      float temp_a = a[i][j];
+      float temp_b = b[i][j];
+      float sub = (temp_a - temp_b);
+      temp_a = temp_a - sub;
+      temp_b = temp_b - sub;
+      c[i][j] = sub;
+      d[i][j] = (temp_a * temp_a) + (temp_b * temp_b);
     }
   }
 }
