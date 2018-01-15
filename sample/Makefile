@@ -16,4 +16,5 @@ ll_emit: test.c
 	clang -O3 -fno-inline -S -emit-llvm -mllvm -polly -mllvm -polly-enable-spdgen test.c
 
 clean:
-	rm -f *.ll *.o *.spd *.s exec
+	rm -f exec
+#	rm -f *.ll *.o *.spd *.s exec
