@@ -59,9 +59,15 @@ int main(void) {
   }
   __spd_end(0);
 
+// XXX SPD returns data to dst
   for (int i = 0; i < M; i++) {
     for (int j = 0; j < N; j++) {
-      printf("%3.3f ", src_cpu[i][j]);
+      if (src_cpu[i][j] == dst[i][j]) {
+        printf("O ");
+      }
+      else {
+        printf("X ");
+      }
     }
     printf("\n");
   }
