@@ -11,8 +11,8 @@ fpga_DE5NET *FPGADev;
 #endif
 
 extern "C" {
-void __spd_runtime_initialize(void);
-void __spd_runtime_finalize(void);
+void __spd_initialize(void);
+void __spd_finalize(void);
 }
 
 void __spd_runtime_initialize(void) {

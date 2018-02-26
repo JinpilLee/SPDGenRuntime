@@ -8,7 +8,7 @@ extern fpga_DE5NET *FPGADev;
 
 extern "C" {
 void __spd_pci_dma_to_FPGA(float *to_fpga_addr, ull_t to_size);
-void __spd_pci_dma_from_FPGA(float *from_fpga_addr, ull_t from_size, int switch_inout);
+void __spd_pci_dma_from_FPGA(float *from_fpga_addr, ull_t from_size, ui_t switch_inout);
 }
 
 void __spd_pci_dma_to_FPGA(float *to_fpga_addr, ull_t to_size) {
@@ -19,7 +19,7 @@ void __spd_pci_dma_to_FPGA(float *to_fpga_addr, ull_t to_size) {
   return;
 }
 
-void __spd_pci_dma_from_FPGA(float *from_fpga_addr, ull_t from_size, int switch_inout) {
+void __spd_pci_dma_from_FPGA(float *from_fpga_addr, ull_t from_size, ui_t switch_inout) {
   addr_t addr;
   if (switch_inout == 1) {
     addr = fpga_src_addr;
