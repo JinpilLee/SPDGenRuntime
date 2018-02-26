@@ -3,4 +3,4 @@ all:
 	ar rcs libSPDGen.a *.o
 
 clean:
-	rm -f libSPDGen.a *.o
+	rm -f *.o
