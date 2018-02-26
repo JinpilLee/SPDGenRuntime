@@ -1,5 +1,5 @@
-CC_CMD=clang -O3
-CXX_CMD=clang++ -O3
+CC_CMD=gcc -std=c99 -O3
+CXX_CMD=g++ -O3
 
 all: main.c kernel.cpp
 	$(CC_CMD) -fno-inline -c main.c
