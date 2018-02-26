@@ -15,7 +15,7 @@ void __spd_initialize(void);
 void __spd_finalize(void);
 }
 
-void __spd_runtime_initialize(void) {
+void __spd_initialize(void) {
 #ifdef FPGA_SDK
   FPGADevices = new fpgas_t<fpga_DE5NET>(1);
   FPGADevices->setBoardsInfo(0, 1);
@@ -27,7 +27,7 @@ void __spd_runtime_initialize(void) {
   fpga_dst_addr = __SPD_DST_ADDR;
 }
 
-void __spd_runtime_finalize(void) {
+void __spd_finalize(void) {
 #ifdef FPGA_SDK
   FPGADevices->close(0);
 #endif

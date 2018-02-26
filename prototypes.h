@@ -5,9 +5,9 @@
 
 // runtime.cpp
 extern void
-__spd_runtime_initialize(void);
+__spd_initialize(void);
 extern void
-__spd_runtime_finalize(void);
+__spd_finalize(void);
 
 // stream.c
 extern float *
