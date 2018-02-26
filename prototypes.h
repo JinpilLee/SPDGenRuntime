@@ -1,8 +1,19 @@
+// this file is not used in the runtime library
+// just for documentation
+
 #include "internal.h"
 
-// kernel.c
+// runtime.cpp
 extern void
-__spd_run_kernel(int kernel_num);
+__spd_runtime_initialize(void);
+extern void
+__spd_runtime_finalize(void);
+
+// stream.c
+extern float *
+__spd_alloc_stream(ull_t size);
+extern void
+__spd_free_stream(float *ptr);
 
 // pack.c
 extern void
@@ -12,8 +23,22 @@ extern void
 __spd_unpack_contiguous(float *dst, ull_t size,
                         float *src, int offset, int diff);
 
-// stream.c
-extern float *
-__spd_alloc_stream(ull_t size);
+// domain.c
 extern void
-__spd_free_stream(float *ptr);
+__spd_create_domain_1(float *stream, int diff,
+                      ull_t dim0_lower, ull_t dim0_upper, ull_t dim0_size);
+extern void
+__spd_create_domain_2(float *stream, int diff,
+                      ull_t dim0_lower, ull_t dim0_upper, ull_t dim0_size,
+                      ull_t dim1_lower, ull_t dim1_upper, ull_t dim1_size);
+
+// pci_dma.cpp
+extern void
+__spd_pci_dma_to_FPGA(float *to_fpga_addr, ull_t to_size);
+
+extern void
+__spd_pci_dma_from_FPGA(float *from_fpga_addr, ull_t from_size, int switch_inout);
+
+// kernel.cpp
+extern void
+__spd_run_kernel(ull_t dma_size, int switch_inout);
