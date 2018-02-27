@@ -5,7 +5,7 @@ all:
 	g++ main.o fpga.o ../../libSPDGen.a -o test
 
 clean:
-	rm -f test main.o
+	rm -f test *.o *.spd
 
 # XXX for internal use
 # requires modified LLVM compiler

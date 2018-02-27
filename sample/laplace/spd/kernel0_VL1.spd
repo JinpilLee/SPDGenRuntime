@@ -1,0 +1,13 @@
+Name     kernel0;
+Main_In  {Mi::src0, iattr, sop, eop};
+Main_Out {Mo::dst0, oattr, sop, eop};
+HDL      hdl0, 2, (xxxv00)() = mStreamBackward(src0, Mi::eop[0])(), <.pConstWord(0),.pBwdCycles(1)>;
+HDL      hdl1, 3, (xxxv10)() = mStreamFoward(src0, Mi::eop[0])(), <.pConstWord(0),.pFwdCycles(1)>;
+EQU      equ0, add110 = xxxv00 + xxxv10;
+HDL      hdl2, 2, (xxxv20)() = mStreamBackward(src0, Mi::eop[0])(), <.pConstWord(0),.pBwdCycles(1024)>;
+EQU      equ1, add170 = add110 + xxxv20;
+HDL      hdl3, 1026, (xxxv30)() = mStreamFoward(src0, Mi::eop[0])(), <.pConstWord(0),.pFwdCycles(1024)>;
+EQU      equ2, add230 = add170 + xxxv30;
+EQU      equ3, conv240 = add230 * 0.250000;
+EQU      equ4, dst0 = mux(src0, conv240, iattr[0]);
+DRCT     (oattr, Mo::sop, Mo::eop) = (iattr, Mi::sop, Mi::eop);

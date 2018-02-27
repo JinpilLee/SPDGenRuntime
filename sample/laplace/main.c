@@ -65,7 +65,7 @@ void verify_result(void) {
   for (int i = 0; i < M; i++) {
     for (int j = 0; j < N; j++) {
       if (src_cpu[i][j] != dst[i][j]) {
-        printf("[%d][%d] %f | %f\n", i, j, src_cpu[i][j], dst[i][j]);
+//        printf("[%d][%d] %f | %f\n", i, j, src_cpu[i][j], dst[i][j]);
         error += fabsf(src_cpu[i][j] - dst[i][j]);
       }
     }
