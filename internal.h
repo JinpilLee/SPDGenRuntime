@@ -1,7 +1,7 @@
 #ifndef __SPD_GEN_RUNTIME__
 #define __SPD_GEN_RUNTIME__
 
-#define DEBUG_ON_CPU
+//#define DEBUG_ON_CPU
 
 typedef unsigned int ui_t;
 typedef unsigned long long ull_t;

@@ -1,6 +1,6 @@
 #include "spd_pragma.h"
 #include "header.h"
-#define VL 4
+#define VL 1
 #define UC 1
 
 extern float src[M][N];
