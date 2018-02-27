@@ -29,8 +29,8 @@ void __spd_initialize(void) {
 #endif
 
 #ifdef DEBUG_ON_CPU
-  fpga_src_addr = (float *)malloc(sizeof(float) * 1024 * 1024);
-  fpga_dst_addr = (float *)malloc(sizeof(float) * 1024 * 1024);
+  fpga_src_addr = (float *)malloc(sizeof(float) * 1024 * 1024 * 128);
+  fpga_dst_addr = (float *)malloc(sizeof(float) * 1024 * 1024 * 128);
 #else
   fpga_src_addr = __SPD_SRC_ADDR;
   fpga_dst_addr = __SPD_DST_ADDR;

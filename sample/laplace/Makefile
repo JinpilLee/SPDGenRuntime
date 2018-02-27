@@ -1,11 +1,15 @@
-OPT=-O3 -mllvm -polly -mllvm -polly-enable-spdgen
+OPT=-O3
+SPD_OPT=-mllvm -polly -mllvm -polly-enable-spdgen
 
 all:
-	clang $(OPT) -c test.c
-	clang++ test.o ../../libSPDGen.a -o test
+	clang $(OPT) -c main.c
+	clang++ main.o fpga.o ../../libSPDGen.a -o test
+
+OBJ:
+	clang $(OPT) $(SPD_OPT) -c fpga.c
 
 IR:
-	clang $(OPT) -S -emit-llvm test.c
+	clang $(OPT) $(SPD_OPT) -S -emit-llvm fpga.c
 
 clean:
-	rm -f *.ll *.spd test test.o
+	rm -f test main.o

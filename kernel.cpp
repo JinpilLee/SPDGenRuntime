@@ -30,7 +30,9 @@ void __spd_run_kernel(ull_t dma_size, ui_t switch_inout) {
       out[i] = in[i];
     }
     else {
-      out[i] = in[i] * 0.99;
+      const int M = 1024;
+      const int N = 1024;
+      out[i] = (in[i-2] + in[i+2] + in[i-(2*N)] + in[i+(2*N)]) * 0.25;
     }
     out[i+1] = in[i+1];
   }
