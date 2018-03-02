@@ -1,4 +1,4 @@
-OPT=-O3
+OPT=-O3 -std=c99
 
 all:
 	gcc $(OPT) -c main.c
