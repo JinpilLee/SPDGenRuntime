@@ -1,0 +1,5 @@
+Name     UC2_kernel0;
+Main_In  {Mi::src0, src1, src2, src3, src4, src5, src6, src7, src8, src9, src10, src11, iattr, sop, eop};
+Main_Out {Mo::dst0, dst1, dst2, dst3, dst4, dst5, dst6, dst7, dst8, dst9, dst10, dst11, oattr, sop, eop};
+HDL      core0, ###, (xxxt000, xxxt001, xxxt002, xxxt003, xxxt004, xxxt005, xxxt006, xxxt007, xxxt008, xxxt009, xxxt0010, xxxt0011, xxxt10, xxxt20, xxxt30) = kernel0(src0, src1, src2, src3, src4, src5, src6, src7, src8, src9, src10, src11, iattr, Mi::sop, Mi::eop);
+HDL      core1, ###, (dst0, dst1, dst2, dst3, dst4, dst5, dst6, dst7, dst8, dst9, dst10, dst11, oattr, Mo::sop, Mo::eop) = kernel0(xxxt000, xxxt001, xxxt002, xxxt003, xxxt004, xxxt005, xxxt006, xxxt007, xxxt008, xxxt009, xxxt0010, xxxt0011, xxxt10, xxxt20, xxxt30);
