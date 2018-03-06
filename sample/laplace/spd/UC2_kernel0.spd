@@ -1,5 +1,0 @@
-Name     UC2_kernel0;
-Main_In  {Mi::src0, iattr, sop, eop};
-Main_Out {Mo::dst0, oattr, sop, eop};
-HDL      core0, ###, (xxxt000, xxxt10, xxxt20, xxxt30) = kernel0(src0, iattr, Mi::sop, Mi::eop);
-HDL      core1, ###, (dst0, oattr, Mo::sop, Mo::eop) = kernel0(xxxt000, xxxt10, xxxt20, xxxt30);
