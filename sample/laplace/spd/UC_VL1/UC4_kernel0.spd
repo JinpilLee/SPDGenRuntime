@@ -1,7 +1,7 @@
 Name     UC4_kernel0;
 Main_In  {Mi::src0, iattr, sop, eop};
 Main_Out {Mo::dst0, oattr, sop, eop};
-HDL      core0, ###, (xxxt000, xxxt10, xxxt20, xxxt30) = kernel0(src0, iattr, Mi::sop, Mi::eop);
-HDL      core1, ###, (xxxt010, xxxt11, xxxt21, xxxt31) = kernel0(xxxt000, xxxt10, xxxt20, xxxt30);
-HDL      core2, ###, (xxxt020, xxxt12, xxxt22, xxxt32) = kernel0(xxxt010, xxxt11, xxxt21, xxxt31);
-HDL      core3, ###, (dst0, oattr, Mo::sop, Mo::eop) = kernel0(xxxt020, xxxt12, xxxt22, xxxt32);
+HDL      core0, ###, (xxxt0, xxxt1, xxxt2, xxxt3) = kernel0(src0, iattr, Mi::sop, Mi::eop);
+HDL      core1, ###, (xxxt4, xxxt5, xxxt6, xxxt7) = kernel0(xxxt0, xxxt1, xxxt2, xxxt3);
+HDL      core2, ###, (xxxt8, xxxt9, xxxt10, xxxt11) = kernel0(xxxt4, xxxt5, xxxt6, xxxt7);
+HDL      core3, ###, (dst0, oattr, Mo::sop, Mo::eop) = kernel0(xxxt8, xxxt9, xxxt10, xxxt11);

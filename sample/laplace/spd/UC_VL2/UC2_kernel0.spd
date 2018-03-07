@@ -1,5 +1,5 @@
 Name     UC2_kernel0;
 Main_In  {Mi::src0, src1, iattr, sop, eop};
 Main_Out {Mo::dst0, dst1, oattr, sop, eop};
-HDL      core0, ###, (xxxt000, xxxt001, xxxt10, xxxt20, xxxt30) = kernel0(src0, src1, iattr, Mi::sop, Mi::eop);
-HDL      core1, ###, (dst0, dst1, oattr, Mo::sop, Mo::eop) = kernel0(xxxt000, xxxt001, xxxt10, xxxt20, xxxt30);
+HDL      core0, ###, (xxxt0, xxxt1, xxxt2, xxxt3, xxxt4) = kernel0(src0, src1, iattr, Mi::sop, Mi::eop);
+HDL      core1, ###, (dst0, dst1, oattr, Mo::sop, Mo::eop) = kernel0(xxxt0, xxxt1, xxxt2, xxxt3, xxxt4);

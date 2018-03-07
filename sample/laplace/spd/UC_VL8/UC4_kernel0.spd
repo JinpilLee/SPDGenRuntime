@@ -1,7 +1,7 @@
 Name     UC4_kernel0;
 Main_In  {Mi::src0, src1, src2, src3, src4, src5, src6, src7, iattr, sop, eop};
 Main_Out {Mo::dst0, dst1, dst2, dst3, dst4, dst5, dst6, dst7, oattr, sop, eop};
-HDL      core0, ###, (xxxt000, xxxt001, xxxt002, xxxt003, xxxt004, xxxt005, xxxt006, xxxt007, xxxt10, xxxt20, xxxt30) = kernel0(src0, src1, src2, src3, src4, src5, src6, src7, iattr, Mi::sop, Mi::eop);
-HDL      core1, ###, (xxxt010, xxxt011, xxxt012, xxxt013, xxxt014, xxxt015, xxxt016, xxxt017, xxxt11, xxxt21, xxxt31) = kernel0(xxxt000, xxxt001, xxxt002, xxxt003, xxxt004, xxxt005, xxxt006, xxxt007, xxxt10, xxxt20, xxxt30);
-HDL      core2, ###, (xxxt020, xxxt021, xxxt022, xxxt023, xxxt024, xxxt025, xxxt026, xxxt027, xxxt12, xxxt22, xxxt32) = kernel0(xxxt010, xxxt011, xxxt012, xxxt013, xxxt014, xxxt015, xxxt016, xxxt017, xxxt11, xxxt21, xxxt31);
-HDL      core3, ###, (dst0, dst1, dst2, dst3, dst4, dst5, dst6, dst7, oattr, Mo::sop, Mo::eop) = kernel0(xxxt020, xxxt021, xxxt022, xxxt023, xxxt024, xxxt025, xxxt026, xxxt027, xxxt12, xxxt22, xxxt32);
+HDL      core0, ###, (xxxt0, xxxt1, xxxt2, xxxt3, xxxt4, xxxt5, xxxt6, xxxt7, xxxt8, xxxt9, xxxt10) = kernel0(src0, src1, src2, src3, src4, src5, src6, src7, iattr, Mi::sop, Mi::eop);
+HDL      core1, ###, (xxxt11, xxxt12, xxxt13, xxxt14, xxxt15, xxxt16, xxxt17, xxxt18, xxxt19, xxxt20, xxxt21) = kernel0(xxxt0, xxxt1, xxxt2, xxxt3, xxxt4, xxxt5, xxxt6, xxxt7, xxxt8, xxxt9, xxxt10);
+HDL      core2, ###, (xxxt22, xxxt23, xxxt24, xxxt25, xxxt26, xxxt27, xxxt28, xxxt29, xxxt30, xxxt31, xxxt32) = kernel0(xxxt11, xxxt12, xxxt13, xxxt14, xxxt15, xxxt16, xxxt17, xxxt18, xxxt19, xxxt20, xxxt21);
+HDL      core3, ###, (dst0, dst1, dst2, dst3, dst4, dst5, dst6, dst7, oattr, Mo::sop, Mo::eop) = kernel0(xxxt22, xxxt23, xxxt24, xxxt25, xxxt26, xxxt27, xxxt28, xxxt29, xxxt30, xxxt31, xxxt32);
